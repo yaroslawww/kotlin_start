@@ -42,6 +42,20 @@ fun main(args: Array<String>) {
     val coordinates = Coordinates(10, 20)
     println(coordinates)
     println(-coordinates)
+
+    /**
+     * Lazy initialisation
+     * Initialisation execute one time when called get()
+     * If you use multi thread please read https://kotlinlang.org/docs/reference/delegated-properties.html
+     */
+    val lazyVariable: String by lazy {
+        println("variable init!")
+          "VariableValue"
+    }
+
+    println(lazyVariable)
+    println(lazyVariable)
+    println(lazyVariable)
 }
 
 /**
